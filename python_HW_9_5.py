@@ -10,10 +10,12 @@ def read_json():
     with open("employees.json", "r") as json_file:
         json_data = json.load(json_file)
         print("Так будет выглядеть json файл в формате csv")
-        print(json_data[0].keys())
+        print(", ".join(json_data[0].keys()))
 
         for data in json_data:
-            print(data.values())
+            for val in data.values():
+                print(val, end=", ")
+            print()
 
 # Функция преобразование из json в csv файл
 def json_in_csv():
@@ -32,11 +34,9 @@ def json_data_add():
         json_data = json.load(json_file)
         json_data.append({})
 
-    with open("employees.json", "w") as json_file:
-
         for key in json_data[0].keys():
             new = input(f"Введите {key} сотрудника ")
-
+            new_data = {}
             try:
                 if key == "height":
                     new = int(new)
@@ -49,10 +49,14 @@ def json_data_add():
                         new = False
                 elif key == "languages":
                     new = new.split(",")
-
-                json_data[len(json_data)-1].update({key: new})
             except Exception:
                 print("Некорректный ввод")
+                break
+            new_data.update({key: new})
+
+        json_data[len(json_data) - 1].update(new_data)
+
+    with open("employees.json", "w") as json_file:
         json.dump(json_data, json_file, indent=4)
 
 # Функция поиска по имени
@@ -96,7 +100,7 @@ def find_year():
 
 
 while True:
-    print("""Выберите задачу
+    print("""Выберите задачу (введите число)
     1. Пренести данные из .json в .csv формат
     2. Добавить сотрудника
     3. Поиск по имени
@@ -121,5 +125,5 @@ while True:
     elif value == "0":
         break
     else:
-        print("Введено некоректное число, попытайтесь еще раз ")
+        print("Некорректный ввод, попытайтесь еще раз ")
 
