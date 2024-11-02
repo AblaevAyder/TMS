@@ -18,7 +18,7 @@ def read_json():
             print()
 
 # Функция преобразование из json в csv файл
-def json_in_csv():
+def json_to_csv():
     with open("employees.json", "r") as json_file:
         with open("employees_csv.csv", "w") as csv_file:
             json_data = json.load(json_file)
@@ -111,7 +111,7 @@ while True:
     """)
     value = input()
     if value == "1":
-        json_in_csv()
+        json_to_csv()
     elif value == "2":
         json_data_add()
     elif value == "3":
