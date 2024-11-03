@@ -1,21 +1,21 @@
 
 class MyTime:
-    def __init__(self, hours1 = 0, minutes1 = 0, seconds1 = 0):
-        if isinstance(hours1, MyTime):
-            self.hours = hours1.hours
-            self.minutes = hours1.minutes
-            self.seconds = hours1.seconds
+    def __init__(self, hours = 0, minutes = 0, seconds = 0):
+        if isinstance(hours, MyTime):
+            self.hours = hours.hours
+            self.minutes = hours.minutes
+            self.seconds = hours.seconds
 
-        elif type(hours1) == type(""):
-            args = hours1.split(":")
+        elif isinstance(hours, str):
+            args = hours.split(":")
             self.hours = int(args[0])
             self.minutes = int(args[1])
             self.seconds = int(args[2])
 
         else:
-            self.hours = hours1
-            self.minutes = minutes1
-            self.seconds = seconds1
+            self.hours = hours
+            self.minutes = minutes
+            self.seconds = seconds
 
     @staticmethod
     def get(hours, minutes, seconds):
