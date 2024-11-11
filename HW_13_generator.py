@@ -1,4 +1,3 @@
-
 def my_gen(stop = 0):
     counter = 0
     number = 0

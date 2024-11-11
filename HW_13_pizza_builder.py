@@ -6,7 +6,6 @@ class Pizza:
         print(f"Pizza ingredients: {", ".join(self.ingredients)}")
 
 class PizzaBuilder:
-
     def __init__(self):
         self.pizza = Pizza()
 
@@ -29,7 +28,6 @@ class PizzaBuilder:
         self.pizza.ingredients.append("bacon")
 
 class PizzaDirector:
-
     def __init__(self) -> None:
         self._builder = None
 
@@ -48,6 +46,7 @@ class PizzaDirector:
         self.builder.add_onions()
         self.builder.add_mushrooms()
         self.builder.add_pepperoni()
+
 
 pizza_builder = PizzaBuilder()
 director = PizzaDirector()
