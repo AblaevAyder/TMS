@@ -6,13 +6,16 @@ class Animal(ABC):
     def speak(self):
         pass
 
+
 class Dog(Animal):
     def speak(self):
         print("woof-woof")
 
+
 class Cat(Animal):
     def speak(self):
         print("meow")
+
 
 class AnimalFactory:
     @staticmethod
@@ -25,6 +28,7 @@ class AnimalFactory:
 
         else:
             raise TypeError
+
 
 animal = AnimalFactory.create_animal("cat")
 animal.speak()

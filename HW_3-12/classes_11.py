@@ -17,6 +17,7 @@ class MyTime:
             self.minutes = minutes
             self.seconds = seconds
 
+
     @staticmethod
     def get(hours, minutes, seconds):
         if len(str(hours)) == 1:
@@ -173,7 +174,6 @@ class SuperStr(str):
             return True
         else:
             return False
-
 
     def is_palindrom(self):
 

@@ -5,6 +5,7 @@ class ParamTypeError(Exception):
         self.param = type(param)
         Exception.__init__(self, f"Параметр не соответствует типу данных {type(param)}")
 
+
 @dataclass
 class Book:
     book_id = None

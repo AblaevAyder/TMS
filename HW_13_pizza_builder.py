@@ -5,6 +5,7 @@ class Pizza:
     def get_ingredients(self):
         print(f"Pizza ingredients: {", ".join(self.ingredients)}")
 
+
 class PizzaBuilder:
     def __init__(self):
         self.pizza = Pizza()
@@ -26,6 +27,7 @@ class PizzaBuilder:
 
     def add_bacon(self):
         self.pizza.ingredients.append("bacon")
+
 
 class PizzaDirector:
     def __init__(self) -> None:
@@ -56,4 +58,3 @@ director.builder = pizza_builder
 director.make_pizza()
 
 pizza_builder.pizza.get_ingredients()
-    
